@@ -36,9 +36,9 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
                 ... more
             </TreeItem>
         </TreeItem>
-
         ... more
     </TreeItem>
+    ... more
 
     <TreeItem ...props1 autoWrap>
         {item somthing} // customize
@@ -55,6 +55,7 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
     <TreeItem nodeContent={<div>level 1</div>}>
         {... more}
     </TreeItem>
+    {... more}
 </TreeScrollView>
 ```
 
@@ -66,33 +67,32 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 |-------------------------|----------|------------------------------------------------------------                      |
 | nodeContent             | Any      | Content tree item                                                                |
 | className               | String   |                                                                                  |
-| iconClassName               | String   |                                                                                  |
+| iconClassName           | String   |                                                                                  |
 | isOpen                  | boolean  | expand state (default `false`)                                                   |
 | disabled                | boolean  | disabled toggle (expand/collapse) (default `false`)                              |
 | selected                | boolean  | selected of tree-item (default `false`)                                          |
-| onClick                 | function | event click on item (use update `selected`)                                      |
-| fullRowSelection        | boolean  | set full row background color when selected (default `false`    only label)      |
+| onClick                 | function | event click on item (use update `selected` (your handler))                       |
+| fullRowSelection        | boolean  | set full row background color when selected (default `false` only label)         |
 | selectedWhenToggle      | boolean  | active event `onClick` when click `exapnd`/`collapse` (default `false`)          |
 | selectedColor           | String   | color when selected (default: `#000`)                                            |
-| backgroundColor         | String   | background color when selected (default: `transparent`)                          |
-| lineColor               | String   | lineX - lineY color (parent vs child)  ( `|_ `)                                  |
+| selectedBgColor         | String   | background color when selected (default: `transparent`)                          |
+| lineColor               | String   | lineX - lineY color (parent vs child)  ( `|__ `)                                 |
 | autoWrap                | boolean  | wrap all child with default when you don't use `nodeContent` (default: `false`)  |
 | showXLine               | boolean  | line of parent vs child (default `true`)                                         |
 | showYLine               | boolean  | line of parent vs child (default `true`)                                         |
-| selfData: PropTypes.any | any      | treeitem's data (onClick = hanleClick(evt, isOpen, selfData))                    |
+| selfData                | any      | tree-item's data [onClick = hanleClick(evt, isOpen, selfData)]                   |
 
 
 <br />
 
 **props2**
-using props [
+using props
+[
     `className`, `effectData`,
     `maxHeight`, `maxWidth`, `width`, `height`, `always`
-]
-of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
+] of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
 
 #### Note
-
 
 <br />
 
