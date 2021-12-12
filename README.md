@@ -41,14 +41,14 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
     ... more
 
     <TreeItem ...props1 autoWrap>
-        {item somthing} // customize
+        {item somthing} // customize child
     </TreeItem>
 
     // { abc.map(() => <TreeItem /> ) }...
 ```
 <br />
 
-###### `width TreeScrollView`
+###### `TreeScrollView`
 
 ```js
 <TreeScrollView ...props2 > // apply perfect scrollbar
@@ -69,18 +69,18 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 | className               | String   |                                                                                  |
 | iconClassName           | String   |                                                                                  |
 | isOpen                  | boolean  | expand state (default `false`)                                                   |
-| disabled                | boolean  | disabled toggle (expand/collapse) (default `false`)                              |
+| disabled                | boolean  | disabled toggle `expand`/`collapse` (default `false`)                            |
 | selected                | boolean  | selected of tree-item (default `false`)                                          |
-| onClick                 | function | event click on item (use update `selected` (your handler))                       |
-| fullRowSelection        | boolean  | set full row background color when selected (default `false` only label)         |
-| selectedWhenToggle      | boolean  | active event `onClick` when click `exapnd`/`collapse` (default `false`)          |
+| onClick                 | function | item click event (use update `selected` [your handler])                          |
+| fullRowSelection        | boolean  | full row background color when selected (default `false` only label)             |
+| selectedWhenToggle      | boolean  | active event `onClick` when click `expand`/`collapse` (default `false`)          |
 | selectedColor           | String   | color when selected (default: `#000`)                                            |
 | selectedBgColor         | String   | background color when selected (default: `transparent`)                          |
 | lineColor               | String   | lineX - lineY color (parent vs child)  ( `|__ `)                                 |
 | autoWrap                | boolean  | wrap all child with default when you don't use `nodeContent` (default: `false`)  |
-| showXLine               | boolean  | line of parent vs child (default `true`)                                         |
-| showYLine               | boolean  | line of parent vs child (default `true`)                                         |
-| selfData                | any      | tree-item's data [onClick = hanleClick(evt, isOpen, selfData)]                   |
+| showXLine               | boolean  | line path from parent node to child node (default `true`)                        |
+| showYLine               | boolean  | line path from parent node to child node (default `true`)                        |
+| selfData                | any      | tree-item's data [`onClick` = hanleClick(evt, `isSelected`, selfData)]           |
 
 
 <br />
@@ -89,8 +89,10 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 using props
 [
     `className`, `effectData`,
-    `maxHeight`, `maxWidth`, `width`, `height`, `always`
-] of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
+    `maxHeight`, `maxWidth`, `width` (360px), `height`, `always` (true)
+]
+
+of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
 
 #### Note
 
