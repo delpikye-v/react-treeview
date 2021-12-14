@@ -72,6 +72,7 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 | disabled                | boolean  | disabled toggle `expand`/`collapse` (default `false`)                            |
 | selected                | boolean  | selected of tree-item (default `false`)                                          |
 | onClick                 | function | item click event (use update `selected` [your handler])                          |
+| onToggle                | function | item onToggle event (`expand`/`collapse`)                                        |
 | fullRowSelection        | boolean  | full row background color when selected (default `false` only label)             |
 | selectedWhenToggle      | boolean  | active event `onClick` when click `expand`/`collapse` (default `false`)          |
 | selectedColor           | String   | color when selected (default: `#000`)                                            |
@@ -80,21 +81,42 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 | autoWrap                | boolean  | wrap all child with default when you don't use `nodeContent` (default: `false`)  |
 | showXLine               | boolean  | line path from parent node to child node (default `true`)                        |
 | showYLine               | boolean  | line path from parent node to child node (default `true`)                        |
-| selfData                | any      | tree-item's data [`onClick` = hanleClick(evt, `isSelected`, selfData)]           |
+| selfData                | any      | tree-item's data [`onClick` = hanleClick(evt, `isSelect`, selfData)]             |
+
+#####
+
+<br >
+
++ Note: if you want connect (line) with each parents (same level) when `openning`. using:
+
+```
++ fullYLine: (Boolean) = `true`.
+
++ effectYLine: (type: any) when you open/close child node => update effectYLine to parent path
+=> if you using TreeScrollView, you don't need to do this.
+```
+
 
 
 <br />
 
 **props2**
 using props
+
 [
     `className`, `effectData`,
-    `maxHeight`, `maxWidth`, `width` (360px), `height`, `always` (true)
+    `maxHeight`, `maxWidth`, `width`, `height`, `always` (true)
 ]
+
+add `fullYLine` (`Boolean`): connect (line) with each parents (same level) when open.
 
 of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
 
+<br />
+
 #### Note
+
+This library does not apply some css the cases where you `customize` yourself.
 
 <br />
 
