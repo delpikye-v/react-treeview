@@ -20,7 +20,7 @@ npm install react-treeview-z
 
 Import the module in the place you want to use:
 ```js
-import { TreeScrollView, TreeItem } from 'react-treeview-z'
+import { TreeScrollView, TreeItem, TreeView } from 'react-treeview-z'
 import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 ```
 
@@ -32,17 +32,21 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
     <TreeItem ...props1 nodeContent={<div>level 1</div>}>
         <TreeItem nodeContent={'Content1'} />
         <TreeItem nodeContent={<span>Ab</span>}>
-            <TreeItem>
-                ... more
-            </TreeItem>
+            ... more
         </TreeItem>
         ... more
     </TreeItem>
     ... more
-
-    <TreeItem ...props1 autoWrap>
+    <TreeItem ...props1 >
         {item somthing} // customize child
     </TreeItem>
+
+    // ********************
+    // no scrollbar
+    <TreeView>
+        <TreeItem nodeContent={'Content1'} />
+        ...
+    </TreeView>
 
     // { abc.map(() => <TreeItem /> ) }...
 ```
@@ -78,7 +82,6 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 | selectedColor           | String   | color when selected (default: `#000`)                                            |
 | selectedBgColor         | String   | background color when selected (default: `transparent`)                          |
 | lineColor               | String   | lineX - lineY color (parent vs child)  ( `|__ `)                                 |
-| autoWrap                | boolean  | wrap all child with default when you don't use `nodeContent` (default: `false`)  |
 | showXLine               | boolean  | line path from parent node to child node (default `true`)                        |
 | showYLine               | boolean  | line path from parent node to child node (default `true`)                        |
 | selfData                | any      | tree-item's data [`onClick` = hanleClick(evt, `isSelect`, selfData)]             |
@@ -87,13 +90,8 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 
 <br >
 
-+ Note: if you want connect (line) with each parents (same level) when `openning`. using:
 
 ```
-+ fullYLine: (Boolean) = `true`.
-
-+ effectYLine: (type: any) when you open/close child node => update effectYLine to parent path
-=> if you using TreeScrollView, you don't need to do this.
 ```
 
 
@@ -107,8 +105,6 @@ using props
     `className`, `effectData`,
     `maxHeight`, `maxWidth`, `width`, `height`, `always` (true)
 ]
-
-add `fullYLine` (`Boolean`): connect (line) with each parents (same level) when open.
 
 of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
 
