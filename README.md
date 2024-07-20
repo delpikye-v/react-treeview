@@ -8,25 +8,37 @@
 #### Description
 
 + React treeview. (Customize / dynamic)
-
 + Apply `perfect-scrollbar`
 
 ---
 
+#### Preview
+![Treeview](https://github.com/delpikye-v/react-treeview/blob/main/demo.png)
+
+
+<br />
+
 #### Usage
 ```js
+// require
+npm install react-perfect-scrollbar-z // // >=version 2
 npm install react-treeview-z
 ```
 
 Import the module in the place you want to use:
 ```js
-import { TreeScrollView, TreeItem, TreeView } from 'react-treeview-z'
+// App.js
 import 'react-treeview-z/build/styles.css'; // for TreeScrollView
+import "react-perfect-scrollbar-z/build/styles.css"; // >=version 2
+
+// import in module
+import { TreeScrollView, TreeView, TreeItem } from "react-treeview-z";
+
 ```
 
 #### Snippet
 
-###### `simple`
+###### simple `TreeItem`
 
 ```js
     <TreeItem ...props1 nodeContent={<div>level 1</div>}>
@@ -40,7 +52,12 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
     <TreeItem ...props1 >
         {item somthing} // customize child
     </TreeItem>
+```
+<br />
 
+###### simple `TreeView`
+
+```js
     // ********************
     // no scrollbar
     <TreeView>
@@ -72,38 +89,43 @@ import 'react-treeview-z/build/styles.css'; // for TreeScrollView
 | nodeContent             | Any      | Content tree item                                                                |
 | className               | String   |                                                                                  |
 | iconClassName           | String   |                                                                                  |
+| checkboxName            | String   |                                                                                  |
+| checkboxClassName       | String   |                                                                                  |
+| labelCheckboxClassName  | String   |                                                                                  |
+| labelCheckboxText       | Any      |                                                                                  |
 | isOpen                  | boolean  | expand state (default `false`)                                                   |
 | disabled                | boolean  | disabled toggle `expand`/`collapse` (default `false`)                            |
 | selected                | boolean  | selected of tree-item (default `false`)                                          |
-| onClick                 | function | item click event (use update `selected` [your handler])                          |
-| onToggle                | function | item onToggle event (`expand`/`collapse`)                                        |
 | fullRowSelection        | boolean  | full row background color when selected (default `false` only label)             |
-| selectedWhenToggle      | boolean  | active event `onClick` when click `expand`/`collapse` (default `false`)          |
+| selectedWhenToggle      | boolean  | active event `onClick` item when click `expand`/`collapse` (default `false`)     |
 | selectedColor           | String   | color when selected (default: `#000`)                                            |
 | selectedBgColor         | String   | background color when selected (default: `transparent`)                          |
-| lineColor               | String   | lineX - lineY color (parent vs child)  ( `|__ `)                                 |
+| lineColor               | String   | lineX - lineY color (parent vs child)                                            |
 | showXLine               | boolean  | line path from parent node to child node (default `true`)                        |
 | showYLine               | boolean  | line path from parent node to child node (default `true`)                        |
+| hideNodeIcon            | boolean  | hidden plus and minus icon                                                       |
+| showCheckbox            | boolean  | showCheckbox                                                                     |
 | selfData                | any      | tree-item's data [`onClick` = hanleClick(evt, `isSelect`, selfData)]             |
+| onClick                 | function | item click event (use update `selected` [your handler])                          |
+| onToggle                | function | item onToggle event (`expand`/`collapse`)                                        |
 
 #####
 
-<br >
-
-
 ```
 ```
-
-
 
 <br />
 
 **props2**
 using props
-
 [
-    `className`, `effectData`,
-    `maxHeight`, `maxWidth`, `width`, `height`, `always` (true)
+    `className`,
+    `effectData`,
+    `maxHeight`,
+    `maxWidth`,
+    `width`,
+    `height`,
+    `always`, (true)
 ]
 
 of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
@@ -111,7 +133,6 @@ of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrol
 <br />
 
 #### Note
-
 This library does not apply some css the cases where you `customize` yourself.
 
 <br />
