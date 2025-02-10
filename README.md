@@ -1,7 +1,14 @@
 <div align="center">
     <h1>react-treeview-z</h1>
+    <br />
     <a href="https://codesandbox.io/s/react-treeview-z-rfbrp">LIVE EXAMPLE</a>
 </div>
+
+---
+
+[![NPM](https://img.shields.io/npm/v/react-treeview-z.svg)](https://www.npmjs.com/package/react-treeview-z)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+![Downloads](https://img.shields.io/npm/dt/react-treeview-z.svg)
 
 ---
 
@@ -15,30 +22,25 @@
 #### Preview
 ![Treeview](https://github.com/delpikye-v/react-treeview/blob/main/demo.png)
 
-
 <br />
 
 #### Usage
 ```js
-// require
-npm install react-perfect-scrollbar-z // // >=version 2
 npm install react-treeview-z
 ```
 
 Import the module in the place you want to use:
 ```js
 // App.js
-import 'react-treeview-z/build/styles.css'; // for TreeScrollView
-import "react-perfect-scrollbar-z/build/styles.css"; // >=version 2
+import 'react-treeview-z/build/styles.css';
 
 // import in module
 import { TreeScrollView, TreeView, TreeItem } from "react-treeview-z";
 
 ```
-
 #### Snippet
 
-###### simple `TreeItem`
+##### TreeItem
 
 ```js
     <TreeItem ...props1 nodeContent={<div>level 1</div>}>
@@ -53,9 +55,8 @@ import { TreeScrollView, TreeView, TreeItem } from "react-treeview-z";
         {item somthing} // customize child
     </TreeItem>
 ```
-<br />
 
-###### simple `TreeView`
+##### TreeView
 
 ```js
     // ********************
@@ -67,9 +68,8 @@ import { TreeScrollView, TreeView, TreeItem } from "react-treeview-z";
 
     // { abc.map(() => <TreeItem /> ) }...
 ```
-<br />
 
-###### `TreeScrollView`
+##### TreeScrollView
 
 ```js
 <TreeScrollView ...props2 > // apply perfect scrollbar
@@ -80,10 +80,12 @@ import { TreeScrollView, TreeView, TreeItem } from "react-treeview-z";
 </TreeScrollView>
 ```
 
+<br />
+
 ---
 
 #### props
-###### TreeItem
+##### TreeItem
 | **props1**              | **type** | **description**                                                                  |
 |-------------------------|----------|------------------------------------------------------------                      |
 | nodeContent             | Any      | Content tree item                                                                |
@@ -117,38 +119,28 @@ import { TreeScrollView, TreeView, TreeItem } from "react-treeview-z";
 <br />
 
 **props2**
-using props
-[
-    `className`,
-    `effectData`,
-    `maxHeight`,
-    `maxWidth`,
-    `width`,
-    `height`,
-    `always`, (true)
-]
-
-of [react-perfect-scrollbar-z](https://www.npmjs.com/package/react-perfect-scrollbar-z)
+using props of [react-treeview-z](https://www.npmjs.com/package/react-treeview-z)
+```js
+`className`,
+`effectData`,
+`maxHeight`,
+`maxWidth`,
+`width`,
+`height`,
+`always` = true
+```
 
 <br />
 
 #### Note
-This library does not apply some css the cases where you `customize` yourself.
-
++ This library does not apply some css the cases where you `customize` yourself.
++ showCheckbox: its support displays checkbox, but if you want to set all selected children, you need to set it manually.
 <br />
 
 #### RUN
 
 <a href="https://codesandbox.io/s/react-treeview-z-rfbrp">LIVE EXAMPLE</a>
 
-```js
-npm install
-```
-```js
-npm run dev
-npm run start
-```
-
-### License
+#### License
 
 MIT

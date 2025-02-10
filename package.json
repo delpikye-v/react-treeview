@@ -1,7 +1,7 @@
 {
     "name": "react-treeview-z",
-    "version": "2.0.0-zxp",
-    "description": "react treeview (Hooks), lighweight but complete react tree",
+    "version": "2.1.0",
+    "description": "react tree-view (Hooks), light-weight but complete react tree",
     "main": "build/index.js",
     "module": "build/index.esm.js",
     "browser": "build/index.js",
@@ -82,7 +82,7 @@
     },
     "dependencies": {
         "@delpi/common": "^0.1.0",
-        "react-perfect-scrollbar-z": "^1.2.3",
+        "react-perfect-scrollbar-z": "^2.2.2",
         "styled-components": "^6.1.11"
     }
 }

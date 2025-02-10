@@ -1,6 +1,7 @@
-import "./treeview/styles.scss";
-export * from "./treeview/TreeStyled";
-import TreeItem, { ITreeItemProps } from "./treeview/TreeItem";
-import TreeScrollView, { ITreeScrollViewProps } from "./treeview/TreeScrollView";
-import TreeView, { ITreeViewProps } from "./treeview/TreeView";
-export { TreeScrollView, ITreeScrollViewProps, TreeView, ITreeViewProps, TreeItem, ITreeItemProps, };
+import "./tree-view/styles.scss";
+import "react-perfect-scrollbar-z/build/styles.css";
+export * from "./tree-view/TreeStyled";
+import TreeItem, { IFTreeItemProps } from "./tree-view/TreeItem";
+import TreeScrollView, { IFTreeScrollViewProps } from "./tree-view/TreeScrollView";
+import TreeView, { IFTreeViewProps } from "./tree-view/TreeView";
+export { TreeScrollView, IFTreeScrollViewProps, TreeView, IFTreeViewProps, TreeItem, IFTreeItemProps, };
