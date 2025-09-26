@@ -1,88 +1,86 @@
 {
-    "name": "react-treeview-z",
-    "version": "2.1.0",
-    "description": "react tree-view (Hooks), light-weight but complete react tree",
-    "main": "build/index.js",
-    "module": "build/index.esm.js",
-    "browser": "build/index.js",
-    "upkg": "build/index.min.js",
-    "styles": "build/styles.css",
-    "files": [
-        "build"
-    ],
-    "types": "build/index.d.ts",
-    "scripts": {
-        "clean": "rimraf ./build",
-        "build": "rollup -c",
-        "cb": "npm run clean && npm run build",
-        "test:watch": "jest --watch",
-        "generate": "node ./util/create-component",
-        "prepublishOnly": "npm run build"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/delpikye-v/react-treeview.git"
-    },
-    "homepage": "https://github.com/delpikye-v/react-treeview#readme",
-    "author": "Delpi.Kye",
-    "keywords": [
-        "react",
-        "react-components",
-        "treeview",
-        "tree-view",
-        "treeview-scrollbar",
-        "react-treeview",
-        "react-treeview-simple",
-        "react-treeview-scrollbars",
-        "react-simple-treeview",
-        "tree",
-        "treenode",
-        "tree-node",
-        "ui",
-        "react-hook"
-    ],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/delpikye-v/react-treeview/issues"
-    },
-    "peerDependencies": {
-        "react": ">=16.8.0",
-        "react-dom": ">=16.8.0"
-    },
-    "devDependencies": {
-        "@babel/cli": "^7.14.8",
-        "@babel/core": "^7.15.0",
-        "@babel/preset-env": "^7.16.11",
-        "@babel/preset-react": "^7.16.7",
-        "@babel/preset-typescript": "^7.16.7",
-        "@rollup/plugin-commonjs": "^17.1.0",
-        "@rollup/plugin-node-resolve": "^11.2.1",
-        "@testing-library/jest-dom": "^5.14.1",
-        "@testing-library/react": "^11.2.7",
-        "@types/jest": "^24.9.1",
-        "@types/react": "17.0.20",
-        "@types/react-dom": "17.0.9",
-        "babel-loader": "^8.2.2",
-        "babel-preset-react-app": "^10.0.0",
-        "jest": "^26.6.3",
-        "node-sass": "^5.0.0",
-        "react": "^17.0.2",
-        "react-dom": "^17.0.2",
-        "rimraf": "^3.0.2",
-        "rollup": "^2.56.3",
-        "rollup-plugin-copy": "^3.4.0",
-        "rollup-plugin-peer-deps-external": "^2.2.4",
-        "rollup-plugin-postcss": "^3.1.8",
-        "rollup-plugin-terser": "^7.0.2",
-        "rollup-plugin-typescript2": "^0.29.0",
-        "sass-loader": "^10.2.0",
-        "ts-jest": "^26.5.6",
-        "tslib": "^2.3.1",
-        "typescript": "^4.4.2"
-    },
-    "dependencies": {
-        "@delpi/common": "^0.1.0",
-        "react-perfect-scrollbar-z": "^2.2.2",
-        "styled-components": "^6.1.11"
-    }
+  "name": "react-treeview-z",
+  "version": "2.2.1",
+  "description": "Lightweight, full-featured React tree-view component using Hooks. Supports custom icons, checkboxes, and virtual scroll.",
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "browser": "build/index.js",
+  "upkg": "build/index.min.js",
+  "styles": "build/styles.css",
+  "types": "build/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "scripts": {
+    "clean": "rimraf ./build",
+    "build": "rollup -c",
+    "cb": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/delpikye-v/react-treeview.git"
+  },
+  "homepage": "https://github.com/delpikye-v/react-treeview#readme",
+  "author": "Delpi.Kye",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/delpikye-v/react-treeview/issues"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "react-treeview",
+    "tree-view",
+    "tree",
+    "treenode",
+    "tree-node",
+    "hooks",
+    "ui",
+    "scrollbar",
+    "checkbox",
+    "icon",
+    "lightweight",
+    "virtual-scroll",
+    "customizable"
+  ],
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "@delpi/common": "^0.1.0",
+    "react-perfect-scrollbar-z": "^2.2.2",
+    "styled-components": "^6.1.11"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.14.8",
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "@rollup/plugin-commonjs": "^17.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^24.9.1",
+    "@types/react": "17.0.20",
+    "@types/react-dom": "17.0.9",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
+    "eslint": "^9.36.0",
+    "jest": "^26.6.3",
+    "node-sass": "^9.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.56.3",
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^3.1.8",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "sass-loader": "^10.2.0",
+    "ts-jest": "^26.5.6",
+    "tslib": "^2.3.1",
+    "typescript": "^4.4.2"
+  }
 }

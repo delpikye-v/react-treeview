@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 export interface IFTreeViewProps {
-    children: React.ReactNode | any;
+    children: React.ReactNode;
     className?: string;
 }
 declare const TreeView: React.FC<IFTreeViewProps>;

@@ -1,146 +1,125 @@
-<div align="center">
-    <h1>react-treeview-z</h1>
-    <br />
-    <a href="https://codesandbox.io/s/react-treeview-z-rfbrp">LIVE EXAMPLE</a>
-</div>
-
----
+# react-treeview-z
 
 [![NPM](https://img.shields.io/npm/v/react-treeview-z.svg)](https://www.npmjs.com/package/react-treeview-z)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 ![Downloads](https://img.shields.io/npm/dt/react-treeview-z.svg)
 
+A lightweight **React TreeView** component built with Hooks — supports nested nodes, checkboxes, and `perfect-scrollbar`.
+
+🔹 Fully customizable
+🔹 Supports nested nodes
+🔹 Optional checkboxes
+🔹 Expand/collapse nodes
+🔹 Integrates with `perfect-scrollbar`
+
 ---
 
-#### Description
+## 🚀 Live Demo
 
-+ React treeview. (Customize / dynamic)
-+ Apply `perfect-scrollbar`
+👉 [Codesandbox Example](https://codesandbox.io/s/react-treeview-z-rfbrp)
 
 ---
 
-#### Preview
-![Treeview](https://github.com/delpikye-v/react-treeview/blob/main/demo.png)
+## 📦 Installation
 
-<br />
-
-#### Usage
-```js
+```bash
 npm install react-treeview-z
+# or
+yarn add react-treeview-z
 ```
 
-Import the module in the place you want to use:
-```js
-// App.js
-import 'react-treeview-z/build/styles.css';
+Import in your project:
 
-// import in module
+```js
+import "react-treeview-z/build/styles.css";
 import { TreeScrollView, TreeView, TreeItem } from "react-treeview-z";
-
-```
-#### Snippet
-
-##### TreeItem
-
-```js
-    <TreeItem ...props1 nodeContent={<div>level 1</div>}>
-        <TreeItem nodeContent={'Content1'} />
-        <TreeItem nodeContent={<span>Ab</span>}>
-            ... more
-        </TreeItem>
-        ... more
-    </TreeItem>
-    ... more
-    <TreeItem ...props1 >
-        {item somthing} // customize child
-    </TreeItem>
 ```
 
-##### TreeView
+---
+
+## 🛠 Usage
 
 ```js
-    // ********************
-    // no scrollbar
-    <TreeView>
-        <TreeItem nodeContent={'Content1'} />
-        ...
-    </TreeView>
-
-    // { abc.map(() => <TreeItem /> ) }...
-```
-
-##### TreeScrollView
-
-```js
-<TreeScrollView ...props2 > // apply perfect scrollbar
-    <TreeItem nodeContent={<div>level 1</div>}>
-        {... more}
+<TreeView>
+  <TreeItem nodeContent={"Root Node"} isOpen>
+    <TreeItem nodeContent={"Child 1"} />
+    <TreeItem nodeContent={"Child 2"}>
+      <TreeItem nodeContent={"Grandchild A"} />
+      <TreeItem nodeContent={"Grandchild B"} />
     </TreeItem>
-    {... more}
+  </TreeItem>
+</TreeView>
+
+<TreeScrollView maxHeight={300}>
+  <TreeItem nodeContent={"Scrollable Root"}>
+    <TreeItem nodeContent={"Child 1"} />
+    <TreeItem nodeContent={"Child 2"} />
+  </TreeItem>
 </TreeScrollView>
 ```
 
-<br />
+---
+
+## ⚙️ `<TreeItem>` Props
+
+| Prop                     | Type       | Default       | Description                         |
+| ------------------------ | ---------- | ------------- | ----------------------------------- |
+| `nodeContent`            | `any`      | —             | Content of the tree node            |
+| `className`              | `string`   | —             | Custom class                        |
+| `iconClassName`          | `string`   | —             | Custom icon class                   |
+| `checkboxName`           | `string`   | —             | Checkbox `name` attribute           |
+| `checkboxClassName`      | `string`   | —             | Checkbox class                      |
+| `labelCheckboxText`      | `any`      | —             | Checkbox label                      |
+| `labelCheckboxClassName` | `string`   | —             | Checkbox label class                |
+| `isOpen`                 | `boolean`  | `false`       | Default open state                  |
+| `disabled`               | `boolean`  | `false`       | Disable expand/collapse             |
+| `selected`               | `boolean`  | `false`       | Node selected                       |
+| `fullRowSelection`       | `boolean`  | `false`       | Highlight entire row when selected  |
+| `selectedWhenToggle`     | `boolean`  | `false`       | Toggle selection on expand/collapse |
+| `selectedColor`          | `string`   | `#000`        | Text color when selected            |
+| `selectedBgColor`        | `string`   | `transparent` | Background color when selected      |
+| `lineColor`              | `string`   | `#92adc0`     | Connector line color                |
+| `showXLine`              | `boolean`  | `true`        | Show horizontal line                |
+| `showYLine`              | `boolean`  | `true`        | Show vertical line                  |
+| `hideNodeIcon`           | `boolean`  | `false`       | Hide plus/minus icon                |
+| `showCheckbox`           | `boolean`  | `false`       | Show checkbox                       |
+| `selfData`               | `any`      | —             | Custom node data                    |
+| `onClick`                | `function` | —             | `(evt, isActive, selfData) => void` |
+| `onToggle`               | `function` | —             | `(isActive, selfData) => void`      |
 
 ---
 
-#### props
-##### TreeItem
-| **props1**              | **type** | **description**                                                                  |
-|-------------------------|----------|------------------------------------------------------------                      |
-| nodeContent             | Any      | Content tree item                                                                |
-| className               | String   |                                                                                  |
-| iconClassName           | String   |                                                                                  |
-| checkboxName            | String   |                                                                                  |
-| checkboxClassName       | String   |                                                                                  |
-| labelCheckboxClassName  | String   |                                                                                  |
-| labelCheckboxText       | Any      |                                                                                  |
-| isOpen                  | boolean  | expand state (default `false`)                                                   |
-| disabled                | boolean  | disabled toggle `expand`/`collapse` (default `false`)                            |
-| selected                | boolean  | selected of tree-item (default `false`)                                          |
-| fullRowSelection        | boolean  | full row background color when selected (default `false` only label)             |
-| selectedWhenToggle      | boolean  | active event `onClick` item when click `expand`/`collapse` (default `false`)     |
-| selectedColor           | String   | color when selected (default: `#000`)                                            |
-| selectedBgColor         | String   | background color when selected (default: `transparent`)                          |
-| lineColor               | String   | lineX - lineY color (parent vs child)                                            |
-| showXLine               | boolean  | line path from parent node to child node (default `true`)                        |
-| showYLine               | boolean  | line path from parent node to child node (default `true`)                        |
-| hideNodeIcon            | boolean  | hidden plus and minus icon                                                       |
-| showCheckbox            | boolean  | showCheckbox                                                                     |
-| selfData                | any      | tree-item's data [`onClick` = hanleClick(evt, `isSelect`, selfData)]             |
-| onClick                 | function | item click event (use update `selected` [your handler])                          |
-| onToggle                | function | item onToggle event (`expand`/`collapse`)                                        |
+## ⚙️ `<TreeView>` & `<TreeScrollView>` Props
 
-#####
+| Prop         | Type      | Description                          |
+| ------------ | --------- | ------------------------------------ |
+| `className`  | `string`  | Custom class for container           |
+| `effectData` | `any`     | Optional data used for effects       |
+| `maxHeight`  | `number`  | Max height (only TreeScrollView)     |
+| `maxWidth`   | `number`  | Max width                            |
+| `width`      | `number`  | Width                                |
+| `height`     | `number`  | Height                               |
+| `always`     | `boolean` | Keep scroll visible (TreeScrollView) |
 
-```
-```
+---
 
-<br />
+## ✨ Features
 
-**props2**
-using props of [react-treeview-z](https://www.npmjs.com/package/react-treeview-z)
-```js
-`className`,
-`effectData`,
-`maxHeight`,
-`maxWidth`,
-`width`,
-`height`,
-`always` = true
-```
+- React **Hooks** based
+- Nested tree nodes
+- Optional **checkboxes**
+- **Expandable/collapsible** nodes
+- Integrates **perfect-scrollbar**
+- Fully customizable styling
 
-<br />
+---
 
-#### Note
-+ This library does not apply some css the cases where you `customize` yourself.
-+ showCheckbox: its support displays checkbox, but if you want to set all selected children, you need to set it manually.
-<br />
+## RUN
 
-#### RUN
+[Live Example on Codesandbox](https://codesandbox.io/s/react-treeview-z-rfbrp)
 
-<a href="https://codesandbox.io/s/react-treeview-z-rfbrp">LIVE EXAMPLE</a>
+---
 
-#### License
+## 📋 License
 
-MIT
+MIT / Delpi

@@ -1,13 +1,7 @@
-import React from 'react';
-interface IFTreeItemDataProps {
-    children: any;
-}
-interface IFTreeSubItemProps {
-    children: React.ReactNode;
-    isActive?: boolean;
-}
+import React from "react";
 export interface IFTreeItemProps {
     id?: string;
+    children?: React.ReactNode;
     nodeContent?: any;
     className?: string;
     iconClassName?: string;
@@ -27,11 +21,10 @@ export interface IFTreeItemProps {
     checkboxClassName?: string;
     labelCheckboxText?: any;
     labelCheckboxClassName?: string;
+    tabIndex?: number;
     selfData?: any;
     onClick?: (evt: any, isActive: boolean, selfData?: any) => any;
     onToggle?: (isActive: boolean, selfData?: any) => any;
 }
-export declare const TreeItemData: React.FC<IFTreeItemDataProps>;
-export declare const TreeSubItem: React.FC<IFTreeSubItemProps>;
 declare const TreeItem: React.FC<IFTreeItemProps>;
 export default TreeItem;
